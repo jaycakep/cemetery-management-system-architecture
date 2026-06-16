@@ -8,13 +8,6 @@
 > **Stack:** PHP · CodeIgniter · MariaDB · Bootstrap · jQuery · TCPDF · XAMPP
 > **Environment:** On-premise · Windows Server 2012 · 32GB RAM
 
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=flat&logo=php&logoColor=white)
-![CodeIgniter](https://img.shields.io/badge/CodeIgniter-DD4814?style=flat&logo=codeigniter&logoColor=white)
-![MariaDB](https://img.shields.io/badge/MariaDB-003545?style=flat&logo=mariadb&logoColor=white)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white)
-![jQuery](https://img.shields.io/badge/jQuery-0769AD?style=flat&logo=jquery&logoColor=white)
-![XAMPP](https://img.shields.io/badge/XAMPP-FB7A24?style=flat&logo=xampp&logoColor=white)
-
 ---
 
 ## 🔥 The Mess — Why This System Had to Be Built
