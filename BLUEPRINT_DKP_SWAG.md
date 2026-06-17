@@ -15,26 +15,24 @@
 
 ## 1. Use Case Diagram
 
-### 1.1 Use Case Utama (High-Level)
+### 1.1 Administrator
 
 ```mermaid
-graph TB
-    subgraph "🧑‍💼 Aktor"
+graph LR
+    subgraph "👤 Aktor"
         ADMIN["👤 Administrator"]
-        PETUGAS["👤 Petugas Lapangan"]
-        PEJABAT["👤 Pejabat / Kadis"]
-        PELAPOR["👤 Pelapor / Ahli Waris"]
     end
 
-    subgraph "📦 DKP SWAG System"
+    subgraph "📦 Administrator Access"
+        direction TB
         UC1["🔐 Login / Logout"]
         UC2["📋 Kelola Data Almarhum"]
-        UC3["🪦 Kelola Makam & Plot"]
+        UC3["🪦 Kelola Makam &amp; Plot"]
         UC4["🔥 Kelola Krematorium"]
         UC5["📸 Input Kegiatan Harian (Giat)"]
-        UC6["💰 Kelola Tagihan & Retribusi"]
+        UC6["💰 Kelola Tagihan &amp; Retribusi"]
         UC7["💳 Proses Pembayaran"]
-        UC8["📄 Cetak Surat & Laporan"]
+        UC8["📄 Cetak Surat &amp; Laporan"]
         UC9["🔍 Pencarian Data"]
         UC10["👥 Kelola Master Data"]
         UC11["📰 Kelola Berita"]
@@ -55,22 +53,71 @@ graph TB
     ADMIN --> UC11
     ADMIN --> UC12
     ADMIN --> UC13
+```
+
+### 1.2 Petugas Lapangan
+
+```mermaid
+graph LR
+    subgraph "👤 Aktor"
+        PETUGAS["👤 Petugas Lapangan"]
+    end
+
+    subgraph "📦 Petugas Access"
+        direction TB
+        UC1["🔐 Login / Logout"]
+        UC2["📋 Kelola Data Almarhum"]
+        UC5["📸 Input Kegiatan Harian (Giat)"]
+        UC9["🔍 Pencarian Data"]
+    end
 
     PETUGAS --> UC1
     PETUGAS --> UC2
     PETUGAS --> UC5
     PETUGAS --> UC9
+```
+
+### 1.3 Pejabat / Kadis
+
+```mermaid
+graph LR
+    subgraph "👤 Aktor"
+        PEJABAT["👤 Pejabat / Kadis"]
+    end
+
+    subgraph "📦 Pejabat Access"
+        direction TB
+        UC1["🔐 Login / Logout"]
+        UC8["📄 Cetak Surat &amp; Laporan"]
+        UC9["🔍 Pencarian Data"]
+        UC13["✍️ Tanda Tangan Elektronik"]
+    end
 
     PEJABAT --> UC1
     PEJABAT --> UC8
-    PEJABAT --> UC13
     PEJABAT --> UC9
+    PEJABAT --> UC13
+```
+
+### 1.4 Pelapor / Ahli Waris
+
+```mermaid
+graph LR
+    subgraph "👤 Aktor"
+        PELAPOR["👤 Pelapor / Ahli Waris"]
+    end
+
+    subgraph "📦 Pelapor Access"
+        direction TB
+        UC2["📋 Kelola Data Almarhum"]
+        UC7["💳 Proses Pembayaran"]
+    end
 
     PELAPOR --> UC2
     PELAPOR --> UC7
 ```
 
-### 1.2 Use Case Detail — Kelola Almarhum
+### 1.5 Use Case Detail — Kelola Almarhum
 
 ```mermaid
 graph TB
@@ -116,7 +163,7 @@ graph TB
     UC_AMBIL -.-> UC_LOG
 ```
 
-### 1.3 Use Case Detail — Tagihan & Pembayaran
+### 1.6 Use Case Detail — Tagihan &amp; Pembayaran
 
 ```mermaid
 graph LR
@@ -1174,7 +1221,7 @@ flowchart LR
 
 | Diagram                       | Cakupan                                                                     |
 | ----------------------------- | --------------------------------------------------------------------------- |
-| **Use Case Diagram**    | 3 level: High-level (13 use case, 4 aktor), Detail Almarhum, Detail Tagihan |
+| **Use Case Diagram**    | 6 diagram: per-role (Admin, Petugas, Pejabat, Pelapor), Detail Almarhum, Detail Tagihan |
 | **Sequence Diagram**    | 4 alur: Registrasi Almarhum, Pembayaran, Cetak Laporan, Autentikasi         |
 | **Domain Model (ERD)**  | 29 tabel lengkap dengan relasi, primary key, foreign key, dan atribut       |
 | **Class Diagram (MVC)** | 15 Controller, 30 Model, 3 Library, lengkap dengan method signature         |
